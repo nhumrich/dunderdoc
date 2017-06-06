@@ -1,0 +1,1227 @@
+__add__: Used for the + operator.
+    section: Binary Operators
+    Usage: myobject + 5
+
+    Example implementation:
+    
+    def __add__(self, other):
+        if isinstance(other, MyClass):
+            return self.data + other.data
+        else:
+            raise TypeError
+    
+    
+__sub__: Used for the - operator.
+    section: Binary Operators
+    Usage: myobject - 5
+
+    Example implementation:
+    
+    def __sub__(self, other):
+        if isinstance(other, MyClass):
+            return self.data - other.data
+        else:
+            raise TypeError
+    
+    
+__mul__: Used for the * operator.
+    section: Binary Operators
+    Usage: myobject * 5
+
+    Example implementation:
+    
+    def __mul__(self, other):
+        if isinstance(other, MyClass):
+            return self.data * other.data
+        else:
+            raise TypeError
+    
+    
+__floordiv__: Used for the // operator.
+    section: Binary Operators
+    Usage: myobject // 5
+
+    Example implementation:
+    
+    def __floordiv__(self, other):
+        if isinstance(other, MyClass):
+            return self.data // other.data
+        else:
+            raise TypeError
+    
+    
+__truediv__: Used for the / operator.
+    section: Binary Operators
+    Usage: myobject / 5
+
+    Example implementation:
+    
+    def __truediv__(self, other):
+        if isinstance(other, MyClass):
+            return self.data / other.data
+        else:
+            raise TypeError
+    
+    
+__mod__: Used for the % operator.
+    section: Binary Operators
+    Usage: myobject % 5
+
+    Example implementation:
+    
+    def __mod__(self, other):
+        if isinstance(other, MyClass):
+            return self.data % other.data
+        else:
+            raise TypeError
+    
+    
+__pow__: Used for the ** operator.
+    section: Binary Operators
+    Usage: myobject ** 5
+
+    Example implementation:
+    
+    def __pow__(self, other):
+        if isinstance(other, MyClass):
+            return self.data ** other.data
+        else:
+            raise TypeError
+    
+    
+__lshift__: Used for the << operator.
+    section: Binary Operators
+    Usage: myobject << 5
+
+    Example implementation:
+    
+    def __lshift__(self, other):
+        if isinstance(other, MyClass):
+            return self.data << other.data
+        else:
+            raise TypeError
+    
+    
+__rshift__: Used for the >> operator.
+    section: Binary Operators
+    Usage: myobject >> 5
+
+    Example implementation:
+    
+    def __rshift__(self, other):
+        if isinstance(other, MyClass):
+            return self.data >> other.data
+        else:
+            raise TypeError
+    
+    
+__and__: Used for the & operator.
+    section: Binary Operators
+    Usage: myobject & 5
+
+    Example implementation:
+    
+    def __and__(self, other):
+        if isinstance(other, MyClass):
+            return self.data & other.data
+        else:
+            raise TypeError
+    
+    
+__or__: Used for the | operator.
+    section: Binary Operators
+    Usage: myobject | 5
+
+    Example implementation:
+    
+    def __or__(self, other):
+        if isinstance(other, MyClass):
+            return self.data | other.data
+        else:
+            raise TypeError
+    
+    
+__xor__: Used for the ^ operator.
+    section: Binary Operators
+    Usage: myobject ^ 5
+
+    Example implementation:
+    
+    def __xor__(self, other):
+        if isinstance(other, MyClass):
+            return self.data ^ other.data
+        else:
+            raise TypeError
+    
+    
+__matmul__: Used for the @ operator.
+    section: Binary Operators
+    Usage: myobject @ 5
+
+    Example implementation:
+    
+    def __matmul__(self, other):
+        if isinstance(other, MyClass):
+            return self.data @ other.data
+        else:
+            raise TypeError
+    
+    
+__iadd__: Used for the += operator. Modifies the object.
+    section: Inplace Binary Operator (=)
+    Usage: myobject += 5
+
+    Example implementation:
+    
+    def __iadd__(self, other):
+        if isinstance(other, MyClass):
+            self.data += other.data
+        else:
+            raise TypeError
+    
+    
+__isub__: Used for the -= operator. Modifies the object.
+    section: Inplace Binary Operator (=)
+    Usage: myobject -= 5
+
+    Example implementation:
+    
+    def __isub__(self, other):
+        if isinstance(other, MyClass):
+            self.data -= other.data
+        else:
+            raise TypeError
+    
+    
+__imul__: Used for the *= operator. Modifies the object.
+    section: Inplace Binary Operator (=)
+    Usage: myobject *= 5
+
+    Example implementation:
+    
+    def __imul__(self, other):
+        if isinstance(other, MyClass):
+            self.data *= other.data
+        else:
+            raise TypeError
+    
+    
+__ifloordiv__: Used for the //= operator. Modifies the object.
+    section: Inplace Binary Operator (=)
+    Usage: myobject //= 5
+
+    Example implementation:
+    
+    def __ifloordiv__(self, other):
+        if isinstance(other, MyClass):
+            self.data //= other.data
+        else:
+            raise TypeError
+    
+    
+__itruediv__: Used for the /= operator. Modifies the object.
+    section: Inplace Binary Operator (=)
+    Usage: myobject /= 5
+
+    Example implementation:
+    
+    def __itruediv__(self, other):
+        if isinstance(other, MyClass):
+            self.data /= other.data
+        else:
+            raise TypeError
+    
+    
+__imod__: Used for the %= operator. Modifies the object.
+    section: Inplace Binary Operator (=)
+    Usage: myobject %= 5
+
+    Example implementation:
+    
+    def __imod__(self, other):
+        if isinstance(other, MyClass):
+            self.data %= other.data
+        else:
+            raise TypeError
+    
+    
+__ipow__: Used for the **= operator. Modifies the object.
+    section: Inplace Binary Operator (=)
+    Usage: myobject **= 5
+
+    Example implementation:
+    
+    def __ipow__(self, other):
+        if isinstance(other, MyClass):
+            self.data **= other.data
+        else:
+            raise TypeError
+    
+    
+__ilshift__: Used for the <<= operator. Modifies the object.
+    section: Inplace Binary Operator (=)
+    Usage: myobject <<= 5
+
+    Example implementation:
+    
+    def __ilshift__(self, other):
+        if isinstance(other, MyClass):
+            self.data <<= other.data
+        else:
+            raise TypeError
+    
+    
+__irshift__: Used for the >>= operator. Modifies the object.
+    section: Inplace Binary Operator (=)
+    Usage: myobject >>= 5
+
+    Example implementation:
+    
+    def __irshift__(self, other):
+        if isinstance(other, MyClass):
+            self.data >>= other.data
+        else:
+            raise TypeError
+    
+    
+__iand__: Used for the &= operator. Modifies the object.
+    section: Inplace Binary Operator (=)
+    Usage: myobject &= 5
+
+    Example implementation:
+    
+    def __iand__(self, other):
+        if isinstance(other, MyClass):
+            self.data &= other.data
+        else:
+            raise TypeError
+    
+    
+__ior__: Used for the |= operator. Modifies the object.
+    section: Inplace Binary Operator (=)
+    Usage: myobject |= 5
+
+    Example implementation:
+    
+    def __ior__(self, other):
+        if isinstance(other, MyClass):
+            self.data |= other.data
+        else:
+            raise TypeError
+    
+    
+__ixor__: Used for the ^= operator. Modifies the object.
+    section: Inplace Binary Operator (=)
+    Usage: myobject ^= 5
+
+    Example implementation:
+    
+    def __ixor__(self, other):
+        if isinstance(other, MyClass):
+            self.data ^= other.data
+        else:
+            raise TypeError
+    
+    
+__imatmul__: Used for the @= operator. Modifies the object.
+    section: Inplace Binary Operator (=)
+    Usage: myobject @= 5
+
+    Example implementation:
+    
+    def __imatmul__(self, other):
+        if isinstance(other, MyClass):
+            self.data @= other.data
+        else:
+            raise TypeError
+    
+    
+__radd__: Used for reversed + operator.
+    section: Reverse Binary Operations
+    Usage: 5 {operator} myobject
+
+    Example implementation:
+    
+    def __radd__(self, other):
+        if isinstance(other, MyClass):
+            return other.data + self.data
+        else:
+            raise TypeError
+    
+    
+__rsub__: Used for reversed - operator.
+    section: Reverse Binary Operations
+    Usage: 5 {operator} myobject
+
+    Example implementation:
+    
+    def __rsub__(self, other):
+        if isinstance(other, MyClass):
+            return other.data - self.data
+        else:
+            raise TypeError
+    
+    
+__rmul__: Used for reversed * operator.
+    section: Reverse Binary Operations
+    Usage: 5 {operator} myobject
+
+    Example implementation:
+    
+    def __rmul__(self, other):
+        if isinstance(other, MyClass):
+            return other.data * self.data
+        else:
+            raise TypeError
+    
+    
+__rfloordiv__: Used for reversed // operator.
+    section: Reverse Binary Operations
+    Usage: 5 {operator} myobject
+
+    Example implementation:
+    
+    def __rfloordiv__(self, other):
+        if isinstance(other, MyClass):
+            return other.data // self.data
+        else:
+            raise TypeError
+    
+    
+__rtruediv__: Used for reversed / operator.
+    section: Reverse Binary Operations
+    Usage: 5 {operator} myobject
+
+    Example implementation:
+    
+    def __rtruediv__(self, other):
+        if isinstance(other, MyClass):
+            return other.data / self.data
+        else:
+            raise TypeError
+    
+    
+__rmod__: Used for reversed % operator.
+    section: Reverse Binary Operations
+    Usage: 5 {operator} myobject
+
+    Example implementation:
+    
+    def __rmod__(self, other):
+        if isinstance(other, MyClass):
+            return other.data % self.data
+        else:
+            raise TypeError
+    
+    
+__rpow__: Used for reversed ** operator.
+    section: Reverse Binary Operations
+    Usage: 5 {operator} myobject
+
+    Example implementation:
+    
+    def __rpow__(self, other):
+        if isinstance(other, MyClass):
+            return other.data ** self.data
+        else:
+            raise TypeError
+    
+    
+__rlshift__: Used for reversed << operator.
+    section: Reverse Binary Operations
+    Usage: 5 {operator} myobject
+
+    Example implementation:
+    
+    def __rlshift__(self, other):
+        if isinstance(other, MyClass):
+            return other.data << self.data
+        else:
+            raise TypeError
+    
+    
+__rrshift__: Used for reversed >> operator.
+    section: Reverse Binary Operations
+    Usage: 5 {operator} myobject
+
+    Example implementation:
+    
+    def __rrshift__(self, other):
+        if isinstance(other, MyClass):
+            return other.data >> self.data
+        else:
+            raise TypeError
+    
+    
+__rand__: Used for reversed & operator.
+    section: Reverse Binary Operations
+    Usage: 5 {operator} myobject
+
+    Example implementation:
+    
+    def __rand__(self, other):
+        if isinstance(other, MyClass):
+            return other.data & self.data
+        else:
+            raise TypeError
+    
+    
+__ror__: Used for reversed | operator.
+    section: Reverse Binary Operations
+    Usage: 5 {operator} myobject
+
+    Example implementation:
+    
+    def __ror__(self, other):
+        if isinstance(other, MyClass):
+            return other.data | self.data
+        else:
+            raise TypeError
+    
+    
+__rxor__: Used for reversed ^ operator.
+    section: Reverse Binary Operations
+    Usage: 5 {operator} myobject
+
+    Example implementation:
+    
+    def __rxor__(self, other):
+        if isinstance(other, MyClass):
+            return other.data ^ self.data
+        else:
+            raise TypeError
+    
+    
+__rmatmul__: Used for reversed @ operator.
+    section: Reverse Binary Operations
+    Usage: 5 {operator} myobject
+
+    Example implementation:
+    
+    def __rmatmul__(self, other):
+        if isinstance(other, MyClass):
+            return other.data @ self.data
+        else:
+            raise TypeError
+    
+    
+__lt__: Used for the < comparison operator.
+    section: Comparison operators
+    Usage: myobject < 5
+
+    Example implementation:
+    
+    def __lt__(self, other):
+        if isinstance(other, MyClass):
+            return self.data < other.data
+        else:
+            raise TypeError
+    
+    
+__le__: Used for the <= comparison operator.
+    section: Comparison operators
+    Usage: myobject <= 5
+
+    Example implementation:
+    
+    def __le__(self, other):
+        if isinstance(other, MyClass):
+            return self.data <= other.data
+        else:
+            raise TypeError
+    
+    
+__eq__: Used for the == comparison operator.
+    section: Comparison operators
+    Usage: myobject == 5
+
+    Example implementation:
+    
+    def __eq__(self, other):
+        if isinstance(other, MyClass):
+            return self.data == other.data
+        else:
+            raise TypeError
+    
+    
+__ne__: Used for the != comparison operator.
+    section: Comparison operators
+    Usage: myobject != 5
+
+    Example implementation:
+    
+    def __ne__(self, other):
+        if isinstance(other, MyClass):
+            return self.data != other.data
+        else:
+            raise TypeError
+    
+    
+__ge__: Used for the >= comparison operator.
+    section: Comparison operators
+    Usage: myobject >= 5
+
+    Example implementation:
+    
+    def __ge__(self, other):
+        if isinstance(other, MyClass):
+            return self.data >= other.data
+        else:
+            raise TypeError
+    
+    
+__gt__: Used for the > comparison operator.
+    section: Comparison operators
+    Usage: myobject > 5
+
+    Example implementation:
+    
+    def __gt__(self, other):
+        if isinstance(other, MyClass):
+            return self.data > other.data
+        else:
+            raise TypeError
+    
+    
+__rlt__: Used for reversed < operator.
+    section: Reverse Binary Operations
+    Usage: 5 {operator} myobject
+
+    Example implementation:
+    
+    def __rlt__(self, other):
+        if isinstance(other, MyClass):
+            return other.data < self.data
+        else:
+            raise TypeError
+    
+    
+__rle__: Used for reversed <= operator.
+    section: Reverse Binary Operations
+    Usage: 5 {operator} myobject
+
+    Example implementation:
+    
+    def __rle__(self, other):
+        if isinstance(other, MyClass):
+            return other.data <= self.data
+        else:
+            raise TypeError
+    
+    
+__req__: Used for reversed == operator.
+    section: Reverse Binary Operations
+    Usage: 5 {operator} myobject
+
+    Example implementation:
+    
+    def __req__(self, other):
+        if isinstance(other, MyClass):
+            return other.data == self.data
+        else:
+            raise TypeError
+    
+    
+__rne__: Used for reversed != operator.
+    section: Reverse Binary Operations
+    Usage: 5 {operator} myobject
+
+    Example implementation:
+    
+    def __rne__(self, other):
+        if isinstance(other, MyClass):
+            return other.data != self.data
+        else:
+            raise TypeError
+    
+    
+__rge__: Used for reversed >= operator.
+    section: Reverse Binary Operations
+    Usage: 5 {operator} myobject
+
+    Example implementation:
+    
+    def __rge__(self, other):
+        if isinstance(other, MyClass):
+            return other.data >= self.data
+        else:
+            raise TypeError
+    
+    
+__rgt__: Used for reversed > operator.
+    section: Reverse Binary Operations
+    Usage: 5 {operator} myobject
+
+    Example implementation:
+    
+    def __rgt__(self, other):
+        if isinstance(other, MyClass):
+            return other.data > self.data
+        else:
+            raise TypeError
+    
+    
+__neg__: Used for the - unary operator.
+    section: Unary Operations
+    Usage: -myobject
+
+    Example implementation:
+    
+    def __neg__(self):
+        return -self.data
+        
+    
+__pos__: Used for the + unary operator.
+    section: Unary Operations
+    Usage: +myobject
+
+    Example implementation:
+    
+    def __pos__(self):
+        return +self.data
+        
+    
+__invert__: Used for the ~ unary operator.
+    section: Unary Operations
+    Usage: ~myobject
+
+    Example implementation:
+    
+    def __invert__(self):
+        return ~self.data
+        
+    
+__abs__: Used for the abs() unary operator.
+    section: Unary Operations
+    Usage: abs(myobject)
+
+    Example implementation:
+    
+    def __abs__(self):
+        return abs(self.data)
+        
+    
+__complex__: Used for the complex() unary operator.
+    section: Unary Operations
+    Usage: complex(myobject)
+
+    Example implementation:
+    
+    def __complex__(self):
+        return complex(self.data)
+        
+    
+__int__: Used for the int() unary operator.
+    section: Unary Operations
+    Usage: int(myobject)
+
+    Example implementation:
+    
+    def __int__(self):
+        return int(self.data)
+        
+    
+__long__: Used for the long() unary operator.
+    section: Unary Operations
+    Usage: long(myobject)
+
+    Example implementation:
+    
+    def __long__(self):
+        return long(self.data)
+        
+    
+__float__: Used for the float() unary operator.
+    section: Unary Operations
+    Usage: float(myobject)
+
+    Example implementation:
+    
+    def __float__(self):
+        return float(self.data)
+        
+    
+__oct__: Used for the oct() unary operator.
+    section: Unary Operations
+    Usage: oct(myobject)
+
+    Example implementation:
+    
+    def __oct__(self):
+        return oct(self.data)
+        
+    
+__hex__: Used for the hex() unary operator.
+    section: Unary Operations
+    Usage: hex(myobject)
+
+    Example implementation:
+    
+    def __hex__(self):
+        return hex(self.data)
+        
+    
+__bool__: Used for the bool() unary operator.
+    section: Unary Operations
+    Usage: bool(myobject)
+
+    Example implementation:
+    
+    def __bool__(self):
+        return bool(self.data)
+        
+    
+__bytes__: Used for the bytes() unary operator.
+    section: Unary Operations
+    Usage: bytes(myobject)
+
+    Example implementation:
+    
+    def __bytes__(self):
+        return bytes(self.data)
+        
+    
+__round__: Used for the round() unary operator.
+    section: Unary Operations
+    Usage: round(myobject)
+
+    Example implementation:
+    
+    def __round__(self):
+        return round(self.data)
+        
+    
+__future__: Special dunder, can not be implemented. This is used when importing python3 compatability libraries in python2
+    section: Special python methods for internal things
+    Usage: from __future__ import
+
+    Example implementation:
+    n/a
+    
+__aenter__: Used for async context manager.
+    section: Async methods
+    Usage: async with myobject as something:
+
+    Example implementation:
+    see __enter__
+    
+__aexit__: Used for async context manager.
+    section: Async methods
+    Usage: called when by python when `async with` finishes
+
+    Example implementation:
+    see __exit__
+    
+__aiter__: Used for async iterators.
+    section: Async methods
+    Usage: async for i in myobject:
+
+    Example implementation:
+    None
+    
+__anext__: Async iterator equivalent of __next__
+    section: Async methods
+    Usage: Used by python during async iteration
+
+    Example implementation:
+    see __next__
+    
+__await__: Await an object (instead of a function)
+    section: Async methods
+    Usage: await myobject
+
+    Example implementation:
+    None
+    
+__new__: Probably wont need
+    section: Advanced methods you probably wont need
+    Usage: todo
+
+    Example implementation:
+    None
+    
+__mro__: Probably wont need
+    section: Advanced methods you probably wont need
+    Usage: todo
+
+    Example implementation:
+    None
+    
+__bases__: Probably wont need
+    section: Advanced methods you probably wont need
+    Usage: todo
+
+    Example implementation:
+    None
+    
+__weakref__: Probably wont need
+    section: Advanced methods you probably wont need
+    Usage: todo
+
+    Example implementation:
+    None
+    
+__self__: Probably wont need
+    section: Advanced methods you probably wont need
+    Usage: todo
+
+    Example implementation:
+    None
+    
+__prepare__: Probably wont need
+    section: Advanced methods you probably wont need
+    Usage: todo
+
+    Example implementation:
+    None
+    
+__classcell__: Probably wont need
+    section: Advanced methods you probably wont need
+    Usage: todo
+
+    Example implementation:
+    None
+    
+__objclass__: Probably wont need
+    section: Advanced methods you probably wont need
+    Usage: todo
+
+    Example implementation:
+    None
+    
+__get__: Probably wont need
+    section: Advanced methods you probably wont need
+    Usage: todo
+
+    Example implementation:
+    None
+    
+__set__: Probably wont need
+    section: Advanced methods you probably wont need
+    Usage: todo
+
+    Example implementation:
+    None
+    
+__delete__: Probably wont need
+    section: Designed for reading
+    Usage: todo
+
+    Example implementation:
+    None
+    
+__func__: Probably wont need
+    section: Advanced methods you probably wont need
+    Usage: todo
+
+    Example implementation:
+    None
+    
+__code__: Probably wont need
+    section: Advanced methods you probably wont need
+    Usage: todo
+
+    Example implementation:
+    None
+    
+__import__: Probably wont need
+    section: Special python methods for internal things
+    Usage: n/a
+
+    Example implementation:
+    None
+    
+__init_subclass__: Probably wont need
+    section: Advanced methods you probably wont need
+    Usage: n/a
+
+    Example implementation:
+    None
+    
+__instancecheck__: Probably wont need
+    section: Advanced methods you probably wont need
+    Usage: n/a
+
+    Example implementation:
+    None
+    
+__length_hint__: Probably wont need
+    section: Advanced methods you probably wont need
+    Usage: n/a
+
+    Example implementation:
+    None
+    
+__missing__: Probably wont need
+    section: Advanced methods you probably wont need
+    Usage: n/a
+
+    Example implementation:
+    None
+    
+__subclasscheck__: Probably wont need
+    section: Advanced methods you probably wont need
+    Usage: n/a
+
+    Example implementation:
+    None
+    
+__set_name__: Probably wont need
+    section: Advanced methods you probably wont need
+    Usage: n/a
+
+    Example implementation:
+    None
+    
+__annotations__: Designed for reading
+    section: Designed for reading
+    Usage: todo
+
+    Example implementation:
+    n/a
+    
+__class__: Designed for reading
+    section: Designed for reading
+    Usage: todo
+
+    Example implementation:
+    n/a
+    
+__closure__: Designed for reading
+    section: Designed for reading
+    Usage: todo
+
+    Example implementation:
+    n/a
+    
+__defaults__: Designed for reading
+    section: Designed for reading
+    Usage: todo
+
+    Example implementation:
+    n/a
+    
+__dict__: Designed for reading
+    section: Designed for reading
+    Usage: todo
+
+    Example implementation:
+    n/a
+    
+__doc__: Designed for reading
+    section: Designed for reading
+    Usage: todo
+
+    Example implementation:
+    n/a
+    
+__file__: Designed for reading
+    section: Designed for reading
+    Usage: todo
+
+    Example implementation:
+    n/a
+    
+__globals__: Designed for reading
+    section: Designed for reading
+    Usage: todo
+
+    Example implementation:
+    n/a
+    
+__kwdefaults__: Designed for reading
+    section: Designed for reading
+    Usage: todo
+
+    Example implementation:
+    n/a
+    
+__module__: Designed for reading
+    section: Designed for reading
+    Usage: todo
+
+    Example implementation:
+    n/a
+    
+__name__: Designed for reading
+    section: Designed for reading
+    Usage: todo
+
+    Example implementation:
+    n/a
+    
+__qualname__: Designed for reading
+    section: Designed for reading
+    Usage: todo
+
+    Example implementation:
+    n/a
+    
+__setitem__: Designed for reading
+    section: Designed for reading
+    Usage: todo
+
+    Example implementation:
+    n/a
+    
+__dir__: Override the behavior of dir()
+    section: Possibly interesting methods for modifying how a class behaves
+    Usage: dir(myobject)
+
+    Example implementation:
+    None
+    
+__contains__: Used for the `in` operator
+    section: Possibly interesting methods for modifying how a class behaves
+    Usage: 5 in myobject
+
+    Example implementation:
+    None
+    
+__call__: Call the object like a function
+    section: Possibly interesting methods for modifying how a class behaves
+    Usage: myobject()
+
+    Example implementation:
+    None
+    
+__del__: Called by the GC when the object gets deleted
+    section: Possibly interesting methods for modifying how a class behaves
+    Usage: Called by the GC when the object gets deleted. It will NOT be called during `del myobject` if there is more than one reference to the object
+
+    Example implementation:
+    None
+    
+__delattr__: Delete an attribute
+    section: Possibly interesting methods for modifying how a class behaves
+    Usage: del myobject.someattr
+
+    Example implementation:
+    None
+    
+__delitem__: Delete an item (square bracket notation)
+    section: Possibly interesting methods for modifying how a class behaves
+    Usage: del myobject[someitem]
+
+    Example implementation:
+    None
+    
+__enter__: Context manager enter
+    section: Possibly interesting methods for modifying how a class behaves
+    Usage: with myobject:
+
+    Example implementation:
+    None
+    
+__exit__: Context manager exit
+    section: Possibly interesting methods for modifying how a class behaves
+    Usage: called by python when the `with myobject:` block ends
+
+    Example implementation:
+    None
+    
+__getattr__: Get an attribute not found. Only called if attr is not found on object.
+    section: Possibly interesting methods for modifying how a class behaves
+    Usage: getattr(myobject)
+
+    Example implementation:
+    None
+    
+__getattribute__: Get an attribute. ALWAYS called during `getattr()`
+    section: Possibly interesting methods for modifying how a class behaves
+    Usage: getattr(myobject)
+
+    Example implementation:
+    None
+    
+__getitem__: Get an item (Square bracket notation)
+    section: Possibly interesting methods for modifying how a class behaves
+    Usage: myobject[someitem]
+
+    Example implementation:
+    None
+    
+__hash__: Calculate the hash of the object. Useful when storing in a setor as the key to a dictionary
+    section: Possibly interesting methods for modifying how a class behaves
+    Usage: Used by python when an object is hashed
+
+    Example implementation:
+    None
+    
+__init__: Initialize the existing object.
+    section: Possibly interesting methods for modifying how a class behaves
+    Usage: myobject = MyClass(*args)
+
+    Example implementation:
+    None
+    
+__len__: Get the length of the object
+    section: Possibly interesting methods for modifying how a class behaves
+    Usage: len(myobject)
+
+    Example implementation:
+    None
+    
+__str__: Get the pretty string representation of the object (usually for printing)
+    section: Possibly interesting methods for modifying how a class behaves
+    Usage: str(myobject); print(myobject)
+
+    Example implementation:
+    None
+    
+__slots__: Set an items slots instead of using __dict__
+    section: Possibly interesting methods for modifying how a class behaves
+    Usage: class MyClass: __slots__ = (some, vals)
+
+    Example implementation:
+    None
+    
+__setattr__: Set an attribute. Always called anytime an attribute is set
+    section: Possibly interesting methods for modifying how a class behaves
+    Usage: myobject.someattr = 5
+
+    Example implementation:
+    None
+    
+__next__: Used by python for iteration. Return the next item.
+    section: Possibly interesting methods for modifying how a class behaves
+    Usage: next(myobject)
+
+    Example implementation:
+    None
+    
+__repr__: Get the string representation for the object for debugging purposes.
+    section: Possibly interesting methods for modifying how a class behaves
+    Usage: >>> myobject   (in REPL)
+
+    Example implementation:
+    None
+    
+__format__: The string representation of the object when used in a format block
+    section: Possibly interesting methods for modifying how a class behaves
+    Usage: "somestring {}".format(myobject)
+
+    Example implementation:
+    None
+    
+__index__: Get the integer representation of the object for index slicing reasons
+    section: Possibly interesting methods for modifying how a class behaves
+    Usage: somelist[myobject:otherobject]
+
+    Example implementation:
+    None
+    
+__iter__: Return a iterator object that contains __next__. (could be self)
+    section: Possibly interesting methods for modifying how a class behaves
+    Usage: for i in myobject
+
+    Example implementation:
+    None
+    
+__reversed__: Just like __iter__ except it returns the items in reversed order (starting at index -1)
+    section: Possibly interesting methods for modifying how a class behaves
+    Usage: for i in reversed(myobject)
+
+    Example implementation:
+    None
+    
