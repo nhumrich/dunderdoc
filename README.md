@@ -7,4 +7,5 @@ pip install dunderdoc
 ## Usage
 
 python -m dunderdoc print
+
 python -m dunderdoc find __add__
