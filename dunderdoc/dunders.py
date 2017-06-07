@@ -183,6 +183,10 @@ for c in comp_dunders:
     method = '__' + 'r' + c.method.strip('_') + '__'
     ReversedBinaryDunder(method=method, operator=operator)
 
+# remove the reversed ones that dont exist
+del dunder_dict['__rgt__']  # rgt is simply lt
+del dunder_dict['__req__']  # equal just tries on both objects
+del dunder_dict['__rlt__']  # rlt is simply gt
 
 UnaryDunder(method='__neg__', operator='-')
 UnaryDunder(method='__pos__', operator='+')
