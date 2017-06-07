@@ -477,7 +477,12 @@ GenericDunder('__getattr__',
               'Get an attribute not found. Only called if attr is not found on object.',
               DunderSections.other,
               'getattr(myobject)',
-              example=None)
+              example='''
+    def __getattr__(self, attr):
+        if attr in self._color_dict:
+            return self._color_dict[attr]
+        return getattr(self.data)
+    ''')
 GenericDunder('__getattribute__',
               'Get an attribute. ALWAYS called during `getattr()`',
               DunderSections.other,
@@ -487,12 +492,18 @@ GenericDunder('__getitem__',
               'Get an item (Square bracket notation)',
               DunderSections.other,
               'myobject[someitem]',
-              example=None)
+              example='''
+    def __getitem__(self, item):
+        return self.data[item]
+    ''')
 GenericDunder('__setitem__',
               'Set an item (Square bracket notation)',
               DunderSections.other,
               'myobject[someitem] = 5',
-              example='n/a')
+              example='''
+    def __setitem__(self, item, value):
+        return self.data[item] = value
+    ''')
 GenericDunder('__hash__',
               'Calculate the hash of the object. Useful when storing in a set'
               'or as the key to a dictionary',
@@ -508,17 +519,24 @@ GenericDunder('__len__',
               'Get the length of the object',
               DunderSections.other,
               'len(myobject)',
-              example=None)
+              example='''
+    def __init__(self, foo=None, bar=None):
+        self.foo = foo
+        self.bar = bar
+    ''')
 GenericDunder('__str__',
               'Get the pretty string representation of the object (usually for printing)',
               DunderSections.other,
               'str(myobject); print(myobject)',
-              example=None)
+              example='''
+    def __str__(self):
+        return '<foo data={s.data}, name={s.name}>'.format(s=self)
+    ''')
 GenericDunder('__slots__',
               'Set an items slots instead of using __dict__',
               DunderSections.other,
               'class MyClass: __slots__ = (some, vals)',
-              example=None)
+              example='see usage')
 GenericDunder('__setattr__',
               'Set an attribute. Always called anytime an attribute is set',
               DunderSections.other,
@@ -533,12 +551,18 @@ GenericDunder('__repr__',
               'Get the string representation for the object for debugging purposes.',
               DunderSections.other,
               '>>> myobject   (in REPL)',
-              example=None)
+              example='''
+    def __repr__(self):
+        return 'Foo(data={f.data}, name={f.name})'.format(f=self)
+    ''')
 GenericDunder('__format__',
               'The string representation of the object when used in a format block',
               DunderSections.other,
               '"somestring {}".format(myobject)',
-              example=None)
+              example='''
+    def __format__(self)
+        return repr(self.name)
+    ''')
 GenericDunder('__index__',
               'Get the integer representation of the object for index slicing reasons',
               DunderSections.other,
