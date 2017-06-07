@@ -904,7 +904,7 @@ __set__: Probably wont need
     None
     
 __delete__: Probably wont need
-    section: Designed for reading
+    section: Advanced methods you probably wont need
     Usage: todo
 
     Example implementation:
@@ -980,9 +980,9 @@ __annotations__: Designed for reading
     Example implementation:
     n/a
     
-__class__: Designed for reading
+__class__: Designed for reading. Returns the class of the object.
     section: Designed for reading
-    Usage: todo
+    Usage: myobject.__class__
 
     Example implementation:
     n/a
@@ -1001,9 +1001,10 @@ __defaults__: Designed for reading
     Example implementation:
     n/a
     
-__dict__: Designed for reading
+__dict__: Designed for reading. Gives the objects data as a dictionary.
+(Will not work if __slots__ is being used exclusively)
     section: Designed for reading
-    Usage: todo
+    Usage: myobject.__dict__
 
     Example implementation:
     n/a
@@ -1015,9 +1016,9 @@ __doc__: Designed for reading
     Example implementation:
     n/a
     
-__file__: Designed for reading
+__file__: Designed for reading. Get the file of the module.
     section: Designed for reading
-    Usage: todo
+    Usage: mymodule.__file__
 
     Example implementation:
     n/a
@@ -1043,23 +1044,16 @@ __module__: Designed for reading
     Example implementation:
     n/a
     
-__name__: Designed for reading
+__name__: Designed for reading. Get the name of the class.
     section: Designed for reading
-    Usage: todo
+    Usage: self.__class__.__name__
 
     Example implementation:
     n/a
     
-__qualname__: Designed for reading
+__qualname__: Designed for reading. Get the fully qualified class name
     section: Designed for reading
-    Usage: todo
-
-    Example implementation:
-    n/a
-    
-__setitem__: Designed for reading
-    section: Designed for reading
-    Usage: todo
+    Usage: self.__class__.__qualname__
 
     Example implementation:
     n/a
@@ -1069,35 +1063,52 @@ __dir__: Override the behavior of dir()
     Usage: dir(myobject)
 
     Example implementation:
-    None
+        def __dir__(self):
+        return [k for k in self.__dict__ if not k.startswith('__')]
+    
     
 __contains__: Used for the `in` operator
     section: Possibly interesting methods for modifying how a class behaves
     Usage: 5 in myobject
 
     Example implementation:
-    None
+    
+    def __contains__(self, object):
+        return object in self.data
+    
     
 __call__: Call the object like a function
     section: Possibly interesting methods for modifying how a class behaves
     Usage: myobject()
 
     Example implementation:
-    None
+    
+    def __call__(self, *args, **kwargs):
+        return self._run(*args, **kwargs)
+    
     
 __del__: Called by the GC when the object gets deleted
     section: Possibly interesting methods for modifying how a class behaves
     Usage: Called by the GC when the object gets deleted. It will NOT be called during `del myobject` if there is more than one reference to the object
 
     Example implementation:
-    None
+    
+    def __del__(self):
+        self.connection.close()
+        self.connection.wait_till_closed()
+        del self.connection
+        
     
 __delattr__: Delete an attribute
     section: Possibly interesting methods for modifying how a class behaves
     Usage: del myobject.someattr
 
     Example implementation:
-    None
+    
+    def __delattr__(self, attr):
+        if attr == 'myconn':
+            self.myconn.close()
+    
     
 __delitem__: Delete an item (square bracket notation)
     section: Possibly interesting methods for modifying how a class behaves
@@ -1125,7 +1136,12 @@ __getattr__: Get an attribute not found. Only called if attr is not found on obj
     Usage: getattr(myobject)
 
     Example implementation:
-    None
+    
+    def __getattr__(self, attr):
+        if attr in self._color_dict:
+            return self._color_dict[attr]
+        return getattr(self.data)
+    
     
 __getattribute__: Get an attribute. ALWAYS called during `getattr()`
     section: Possibly interesting methods for modifying how a class behaves
@@ -1139,7 +1155,20 @@ __getitem__: Get an item (Square bracket notation)
     Usage: myobject[someitem]
 
     Example implementation:
-    None
+    
+    def __getitem__(self, item):
+        return self.data[item]
+    
+    
+__setitem__: Set an item (Square bracket notation)
+    section: Possibly interesting methods for modifying how a class behaves
+    Usage: myobject[someitem] = 5
+
+    Example implementation:
+    
+    def __setitem__(self, item, value):
+        return self.data[item] = value
+    
     
 __hash__: Calculate the hash of the object. Useful when storing in a setor as the key to a dictionary
     section: Possibly interesting methods for modifying how a class behaves
@@ -1160,21 +1189,28 @@ __len__: Get the length of the object
     Usage: len(myobject)
 
     Example implementation:
-    None
+    
+    def __init__(self, foo=None, bar=None):
+        self.foo = foo
+        self.bar = bar
+    
     
 __str__: Get the pretty string representation of the object (usually for printing)
     section: Possibly interesting methods for modifying how a class behaves
     Usage: str(myobject); print(myobject)
 
     Example implementation:
-    None
+    
+    def __str__(self):
+        return '<foo data={s.data}, name={s.name}>'.format(s=self)
+    
     
 __slots__: Set an items slots instead of using __dict__
     section: Possibly interesting methods for modifying how a class behaves
     Usage: class MyClass: __slots__ = (some, vals)
 
     Example implementation:
-    None
+    see usage
     
 __setattr__: Set an attribute. Always called anytime an attribute is set
     section: Possibly interesting methods for modifying how a class behaves
@@ -1195,14 +1231,20 @@ __repr__: Get the string representation for the object for debugging purposes.
     Usage: >>> myobject   (in REPL)
 
     Example implementation:
-    None
+    
+    def __repr__(self):
+        return 'Foo(data={f.data}, name={f.name})'.format(f=self)
+    
     
 __format__: The string representation of the object when used in a format block
     section: Possibly interesting methods for modifying how a class behaves
     Usage: "somestring {}".format(myobject)
 
     Example implementation:
-    None
+    
+    def __format__(self)
+        return repr(self.name)
+    
     
 __index__: Get the integer representation of the object for index slicing reasons
     section: Possibly interesting methods for modifying how a class behaves
@@ -1221,6 +1263,15 @@ __iter__: Return a iterator object that contains __next__. (could be self)
 __reversed__: Just like __iter__ except it returns the items in reversed order (starting at index -1)
     section: Possibly interesting methods for modifying how a class behaves
     Usage: for i in reversed(myobject)
+
+    Example implementation:
+    None
+    
+__main__: The name of the entrypoint file to python.
+Also can create a __main__.py, which will be run during
+ the -m flag on python
+    section: Special python methods for internal things
+    Usage: python -m mypackage
 
     Example implementation:
     None

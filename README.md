@@ -8,7 +8,9 @@ pip install dunderdoc
 
 ```bash
 python -m dunderdoc print
-python -m dunderdoc find __add__
+python -m dunderdoc find __add__  # search by dunder name
+python -m dunderdoc list  # show all sections
+python -m dunderdoc print {section}  # show all in a section
 ```
 
 Or, do you just want to see all the docs in your browser/editor and search?
