@@ -294,7 +294,7 @@ GenericDunder('__set__',
               example=None)
 GenericDunder('__delete__',
               'Probably wont need',
-              DunderSections.read,
+              DunderSections.advanced,
               'todo',
               example=None)
 GenericDunder('__func__',
@@ -352,9 +352,9 @@ GenericDunder('__annotations__',
               'todo',
               example='n/a')
 GenericDunder('__class__',
-              'Designed for reading',
+              'Designed for reading. Returns the class of the object.',
               DunderSections.read,
-              'todo',
+              'myobject.__class__',
               example='n/a')
 GenericDunder('__closure__',
               'Designed for reading',
@@ -367,24 +367,20 @@ GenericDunder('__defaults__',
               'todo',
               example='n/a')
 GenericDunder('__dict__',
-              'Designed for reading',
+              'Designed for reading. Gives the objects data as a dictionary.\n'
+              '(Will not work if __slots__ is being used exclusively)',
               DunderSections.read,
-              'todo',
+              'myobject.__dict__',
               example='n/a')
 GenericDunder('__doc__',
               'Designed for reading',
               DunderSections.read,
               'todo',
               example='n/a')
-GenericDunder('__dict__',
-              'Designed for reading',
-              DunderSections.read,
-              'todo',
-              example='n/a')
 GenericDunder('__file__',
-              'Designed for reading',
+              'Designed for reading. Get the file of the module.',
               DunderSections.read,
-              'todo',
+              'mymodule.__file__',
               example='n/a')
 GenericDunder('__globals__',
               'Designed for reading',
@@ -402,19 +398,14 @@ GenericDunder('__module__',
               'todo',
               example='n/a')
 GenericDunder('__name__',
-              'Designed for reading',
+              'Designed for reading. Get the name of the class.',
               DunderSections.read,
-              'todo',
+              'self.__class__.__name__',
               example='n/a')
 GenericDunder('__qualname__',
-              'Designed for reading',
+              'Designed for reading. Get the fully qualified class name',
               DunderSections.read,
-              'todo',
-              example='n/a')
-GenericDunder('__setitem__',
-              'Designed for reading',
-              DunderSections.read,
-              'todo',
+              'self.__class__.__qualname__',
               example='n/a')
 
 
@@ -423,29 +414,50 @@ GenericDunder('__dir__',
               'Override the behavior of dir()',
               DunderSections.other,
               'dir(myobject)',
-              example=None)
+              example='''\
+    def __dir__(self):
+        return [k for k in self.__dict__ if not k.startswith('__')]
+    ''')
 GenericDunder('__contains__',
               'Used for the `in` operator',
               DunderSections.other,
               '5 in myobject',
-              example=None)
-GenericDunder('__call__',
-              'Call the object like a function',
-              DunderSections.other,
-              'myobject()',
-              example=None)
-GenericDunder('__del__',
-              'Called by the GC when the object gets deleted',
-              DunderSections.other,
-              'Called by the GC when the object gets deleted. '
-              'It will NOT be called during `del myobject` '
-              'if there is more than one reference to the object',
-              example=None)
-GenericDunder('__delattr__',
-              'Delete an attribute',
-              DunderSections.other,
-              'del myobject.someattr',
-              example=None)
+              example='''
+    def __contains__(self, object):
+        return object in self.data
+    ''')
+GenericDunder(
+    '__call__',
+    'Call the object like a function',
+    DunderSections.other,
+    'myobject()',
+    example='''
+    def __call__(self, *args, **kwargs):
+        return self._run(*args, **kwargs)
+    ''')
+GenericDunder(
+    '__del__',
+    'Called by the GC when the object gets deleted',
+    DunderSections.other,
+    'Called by the GC when the object gets deleted. '
+    'It will NOT be called during `del myobject` '
+    'if there is more than one reference to the object',
+    example='''
+    def __del__(self):
+        self.connection.close()
+        self.connection.wait_till_closed()
+        del self.connection
+        ''')
+GenericDunder(
+    '__delattr__',
+    'Delete an attribute',
+    DunderSections.other,
+    'del myobject.someattr',
+    example='''
+    def __delattr__(self, attr):
+        if attr == 'myconn':
+            self.myconn.close()
+    ''')
 GenericDunder('__delitem__',
               'Delete an item (square bracket notation)',
               DunderSections.other,
@@ -476,6 +488,11 @@ GenericDunder('__getitem__',
               DunderSections.other,
               'myobject[someitem]',
               example=None)
+GenericDunder('__setitem__',
+              'Set an item (Square bracket notation)',
+              DunderSections.other,
+              'myobject[someitem] = 5',
+              example='n/a')
 GenericDunder('__hash__',
               'Calculate the hash of the object. Useful when storing in a set'
               'or as the key to a dictionary',
@@ -536,6 +553,14 @@ GenericDunder('__reversed__',
               'Just like __iter__ except it returns the items in reversed order (starting at index -1)',
               DunderSections.other,
               'for i in reversed(myobject)',
+              example=None)
+
+GenericDunder('__main__',
+              'The name of the entrypoint file to python.\n'
+              'Also can create a __main__.py, which will be run during'
+              '\n the -m flag on python',
+              DunderSections.special,
+              'python -m mypackage',
               example=None)
 
 

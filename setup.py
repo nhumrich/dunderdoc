@@ -3,8 +3,7 @@ from setuptools import setup
 setup(
     name='dunderdoc',
     version='0.0.0',
-    requires=[
-    ],
+    requires=['click'],
     packages=['dunderdoc'],
     url='https://github.com/nhumrich/dunderdoc',
     license='MIT',
