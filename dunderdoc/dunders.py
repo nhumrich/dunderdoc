@@ -9,7 +9,7 @@ class DunderSections(Enum):
     inplace = 'Inplace Binary Operator (=)'
     reverse = 'Reverse Binary Operations'
     comparison = 'Comparison operators'
-    async = 'Async methods'
+    asyncio = 'Async methods'
     advanced = 'Advanced methods you probably wont need'
     read = 'Designed for reading'
     other = 'Possibly interesting methods for modifying how a class behaves'
@@ -293,7 +293,7 @@ GenericDunder('__get__',
               example=None)
 GenericDunder('__set__',
               'Probably wont need',
-              DunderSections.advanced,
+              DunderSections.advanced,/
               'todo',
               example=None)
 GenericDunder('__delete__',
